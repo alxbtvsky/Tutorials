@@ -15,19 +15,15 @@
         app.tutorials = data;
     });
   }]);
-})();
-
-(function(){
-    var app = angular.module('app-directives', []);
-
-    app.directive("tutorialSpecs", function() {
+  
+      app.directive("tutorialSpecs", function() {
       return {
         restrict:"A",
         templateUrl: "tutorial-specs.html"
       };
     });
 	
-  })();
+})();
 	</script>
   </head>
 
