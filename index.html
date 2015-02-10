@@ -6,13 +6,13 @@
 	
 	<script>
 	(function() {
-  var app = angular.module('tutorialApp', ['app-directives']);
+  var app = angular.module('tutorialApp', ['tutorial-directives']);
 
   app.controller('TutorialsController', ['$http', function($http){
-    var app = this;
-    app.tutorials = [];
+    var tutorial = this;
+    tutorial.tutorials = [];
     $http.get('./tutorials.json').success(function(data){
-        app.tutorials = data;
+        tutorial.tutorials = data;
     });
   }]);
   
@@ -27,22 +27,19 @@
 	</script>
   </head>
 
-  <body ng-controller="TutorialsController as tutorials">
+  <body ng-controller="TutorialsController as tutorial">
     <!--  Store Header  -->
     <header>
       <h1 class="text-center">Tutorials</h1>
       <h2 class="text-center">– An Angular Application –</h2>
     </header>
 
-    <!--  Products Container  -->
+    <!--  Tutorials Container  -->
     <div class="list-group">
-      <!--  Product Container  -->
-      <div class="list-group-item" ng-repeat="tutorial in app.tutorials">
+      <div class="list-group-item" ng-repeat="tutorial in tutorial.tutorials">
         <h3>{{tutorial.url}} <em class="pull-right">{{tutorial.title}}</em></h3>
 		<h3>{{tutorial.image}} <em class="pull-right">{{tutorial.author}}</em></h3>
-
       </div>
-
     </div>
   </body>
 </html>
