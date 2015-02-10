@@ -6,7 +6,7 @@
 	
 	<script>
 	(function() {
-  var app = angular.module('tutorialApp', ['tutorial-directives']);
+  var app = angular.module('tutorialApp', ['ngRoute', 'tutorial-directives']);
 
   app.controller('TutorialsController', ['$http', function($http){
     var tutorial = this;
