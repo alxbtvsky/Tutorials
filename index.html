@@ -12,22 +12,36 @@
       <h2 class="text-center">– an Angular application –</h2>
     </header>
 	
+	<style>
+	div img{
+		width: 125px;
+		height: 125px;
+	}
+	</style>
+	
 	<div class="container-fluid">
 	
 		<nav>
 	       <ul class="nav nav-pills pull-right">
 			<li>Search: <input ng-model="query"> </li>
+			<li>
+			Sort By:
+			<select ng-model="orderProp">
+				<option value="title">Alphabetical by Title</option>
+				<option value="author">Alphabetical by Author</option>		
+			</select>
+			</li>
           </ul>
         </nav>
 		
 		<div class="row">
 			<div class="col-md-10">			
 				<ul class="list-unstyled">
-					<li ng-repeat="tutorial in tuts.tutorials | filter:query">
+					<li ng-repeat="tutorial in tuts.tutorials | filter:query | orderBy: orderProp">
 						<h3>
 							{{tutorial.title}}
 						</h3>
-							<a href="{{tutorial.url}}">{{tutorial.url}}</a> <br>
+							<a href="{{tutorial.url}}" target="_blank">{{tutorial.url}}</a> <br>
 							<img src="{{tutorial.image}}"><br>
 							<h6>-{{tutorial.author}}</h6>
 					</li>
