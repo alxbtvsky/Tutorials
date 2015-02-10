@@ -3,8 +3,32 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
-    <script type="text/javascript" src="products.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+	
+	<script>
+	(function() {
+  var app = angular.module('tutorialApp', ['app-directives']);
+
+  app.controller('TutorialsController', ['$http', function($http){
+    var app = this;
+    app.tutorials = [];
+    $http.get('./tutorials.json').success(function(data){
+        app.tutorials = data;
+    });
+  }]);
+})();
+
+(function(){
+    var app = angular.module('app-directives', []);
+
+    app.directive("tutorialSpecs", function() {
+      return {
+        restrict:"A",
+        templateUrl: "tutorial-specs.html"
+      };
+    });
+	
+  })();
+	</script>
   </head>
 
   <body ng-controller="TutorialsController as tutorials">
@@ -19,7 +43,7 @@
       <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="tutorial in app.tutorials">
         <h3>{{tutorial.url}} <em class="pull-right">{{tutorial.title}}</em></h3>
-		<h3>{{image.url}} <em class="pull-right">{{author.title}}</em></h3>
+		<h3>{{tutorial.image}} <em class="pull-right">{{tutorial.author}}</em></h3>
 
       </div>
 
