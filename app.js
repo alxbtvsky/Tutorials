@@ -2,12 +2,11 @@
   var app = angular.module('myApp', []);
 
   app.controller('TutsController', function($http){
-	  var obj = {content:null};
+	  this.tutorials = [];
+	  
 	  $http.get('tutorials.json').success(function(data){
-		  obj.content = data;
+		  this.tutorials = data;
 	  });
-	  return obj;
-      this.tutorials = obj;
   });
   
 })();
