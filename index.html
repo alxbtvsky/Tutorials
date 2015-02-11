@@ -78,24 +78,52 @@
                     by <a href="https://alxbtvsky.github.io">Alex Batovsky</a>
                 </p>
 
-                <hr>
-
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on February 10, 2015 at 9:00 PM</p>
 
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="TutImage.png" alt="">
+				<h6>
+				This is an exmaple of what your angular application could look like!
+				</h6>
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                <p class="lead">Code Snippets:</p>
+				<pre>
+(function() {
+var app = angular.module('myApp', []);
+
+app.controller('TutsController', function(){
+this.tutorials = tuts;
+});
+
+var tuts = [
+{
+"url": "http://tutorials.jenkov.com/angularjs/index.html",
+"title": "AngularJS Tutorial",
+"image": "http://tutorials.jenkov.com/images/layout/small-portrait_mini.jpg",
+"author": "Jakob Jenkov"
+},
+...
+				</pre>
+				<h6>
+				This is creates a variable named app and sets it to an anuglar model named myApp. 
+				We can then use the app variable to create a controller named TutsController that can be used in html.
+				We can then use the function of the controll to set the current state of tutorials in the controller to an array of data that contains information about angular tutorials.
+				</h6>
+				<img class="img-responsive" src="htmlSnippet.png" alt="">
+				<h6>
+				This creates an unordered list that has an ng-repeat telling the broswer to display every tutorial that is in your array of data.
+				This works because your HTML is using the controller you created from the last step and cycling through the array of data.
+			    You can use 'filter:' and 'orderBy:' which are built in angular functions that allow you to search, filter and sort your data, as well.
+				Using angular expressions (double curly braces) allow you to call each piece of information from your array of data which allows you to display it to the page.
+				Please note that you must add 'ng-app="myApp"' to your html tag as well as 'ng-controller="TutsController" as (anything you want)' to your body tag.				
+				</h6>
+				</pre>
 
                 <hr>
 
@@ -125,7 +153,7 @@
                         <h4 class="media-heading">Comment 1
                             <small>February, 2015 at 9:30 PM</small>
                         </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        This blog post helped me so much in learning more about AngularJs and I look forward to seeing more in the future. Thank you!
                     </div>
                 </div>
 
@@ -138,7 +166,7 @@
                         <h4 class="media-heading">Comment 2
                             <small>February, 2015 at 9:30 PM</small>
                         </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        Thank you for pointing me in the right direction when it comes to learning about AngularJS!
                     </div>
                 </div>
 
@@ -167,25 +195,25 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 1</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 2</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 3</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 4</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 5</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 6</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 7</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="#">Tutorial 8</a>
                                 </li>
                             </ul>
                         </div>
@@ -195,8 +223,12 @@
 
                 <!-- Side Widget Well -->
                 <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    <h4>Contact Information</h4>
+                    <p>
+					Name: Alex Batovsky<br>
+					Phone: 502-555-3333<br>
+					Url:    <a href="alxbtvsky.github.io">My Website!</a> <br>
+					</p>
                 </div>
 
             </div>
