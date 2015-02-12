@@ -27,7 +27,7 @@
 		<h1>.</h1>
       <h1 class="text-center">Tutorials</h1>
       <h2 class="text-center"> an Angular application </h2>
-	  <hr>
+
 	  
 		</header>
     <!-- Navigation -->
@@ -60,7 +60,8 @@
     </nav>
 	
 	<div class="container-fluid">
-
+		<div class="row">
+			<div class="col-md-12">	
 		<nav>
 	       <ul class="nav nav-pills pull-right">
 			<li>Search: <input ng-model="query"> </li>
@@ -72,16 +73,13 @@
 			</select>
 			</li>
           </ul>
-        </nav>
-
-		<div class="row">
-			<div class="col-md-10">			
+        </nav>			
 				<ul class="list-unstyled">
 					<li ng-repeat="tutorial in tuts.tutorials | filter:query | orderBy: orderProp">
 						<h3>
-							{{tutorial.title}}
+							<a href="{{tutorial.url}}" target="_blank">{{tutorial.title}}</a> <br>
 						</h3>
-							<a href="{{tutorial.url}}" target="_blank">{{tutorial.url}}</a> <br>
+							
 							<img src="{{tutorial.image}}"><br>
 							<h6>-{{tutorial.author}}</h6>
 							<hr>
