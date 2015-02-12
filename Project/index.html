@@ -22,6 +22,12 @@
 	  background-color:#676767;
 	  height: 1px;
 	}
+	
+	a:link {color: black; text-decoration: underline;}   
+    a:visited {color: black;}   
+    a:hover {color: black;}    
+    a:active {color: black;}   
+	}
 	</style>
 		<header>
 		<h1>.</h1>
@@ -76,13 +82,14 @@
         </nav>			
 				<ul class="list-unstyled">
 					<li ng-repeat="tutorial in tuts.tutorials | filter:query | orderBy: orderProp">
+												<hr>
 						<h3>
 							<a href="{{tutorial.url}}" target="_blank">{{tutorial.title}}</a> <br>
 						</h3>
 							
 							<img src="{{tutorial.image}}"><br>
 							<h6>-{{tutorial.author}}</h6>
-							<hr>
+
 					</li>
 				</ul>
 			</div>
